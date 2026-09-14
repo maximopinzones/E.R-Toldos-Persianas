@@ -1,14 +1,27 @@
-/* Configuración global del Navbar y Fuentes */
+/* ========================================================== */
+/* CONFIGURACIÓN GLOBAL Y TIPOGRAFÍA                          */
+/* ========================================================== */
 * {
   font-family: 'Zodiak', serif !important;
 }
 
+body {
+  margin: 0;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ========================================================== */
+/* NAVBAR Y COMPONENTES GLOBALES                              */
+/* ========================================================== */
 .navbar,
 .custom-navbar {
   background-color: #080B14 !important;
+  position: relative;
+  z-index: 10;
 }
 
-/* Colores de texto y enlaces del Navbar */
 .custom-navbar .navbar-brand,
 .custom-navbar .nav-link {
   color: #ffffff !important;
@@ -19,12 +32,13 @@
   color: #cccccc !important;
 }
 
-/* Icono menú hamburguesa para fondo oscuro */
 .custom-navbar .navbar-toggler-icon {
   filter: invert(1);
 }
 
-/* Estilos del botón Uiverse (.btn2) */
+/* ========================================================== */
+/* BOTÓN UIVERSE (.btn2)                                      */
+/* ========================================================== */
 .btn2 {
   position: relative;
   display: inline-block;
@@ -82,15 +96,9 @@
   background-color: transparent;
 }
 
-/* --- Solución para Desenfoque de Fondo --- */
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  position: relative;
-  overflow-x: hidden;
-}
-
+/* ========================================================== */
+/* SECCIÓN HERO                                               */
+/* ========================================================== */
 .hero-wrapper {
   position: relative;
   width: 100%;
@@ -119,12 +127,6 @@ body {
   z-index: 2;
 }
 
-.custom-navbar {
-  position: relative;
-  z-index: 10;
-}
-
-/* KEYFRAMES DE ANIMACIONES */
 @keyframes difuminarFondo {
   from { filter: blur(0px); }
   to { filter: blur(8px); }
@@ -146,9 +148,7 @@ body {
   align-items: flex-start;
   justify-content: flex-start;
   min-height: auto;
-  padding-top: 50px;
-  padding-left: 5%;
-  padding-right: 20px;
+  padding: 50px 20px 0 5%;
   box-sizing: border-box;
 }
 
@@ -184,40 +184,22 @@ body {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -5px; /* Distancia de la línea al texto */
+  bottom: -5px;
   width: 100%;
-  height: 6px; /* Grosor de la línea */
-  background-color: #e63946; /* El tono rojo que ya usas en tus iconos */
+  height: 6px;
+  background-color: #e63946;
   border-radius: 4px;
 }
 
-@media (max-width: 768px) {
-  .hero-container {
-    padding-top: 30px;
-    padding-left: 20px;
-    padding-right: 20px;
-    min-height: auto;
-  }
-  .texto-animado {
-    max-width: 100%;
-  }
-  .texto-animado h1 {
-    font-size: 2.2rem;
-    line-height: 1.25;
-    margin-bottom: 10px;
-  }
-  .texto-animado p {
-    font-size: 1rem;
-  }
-}
-
+/* ========================================================== */
+/* TARJETA DUEÑO (HERO) Y BOTÓN                               */
+/* ========================================================== */
 .card-owner-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-top: 30px;
-  margin-bottom: 45px;
+  margin: 30px 0 45px 0;
   position: relative;
   z-index: 5;
 }
@@ -232,7 +214,6 @@ body {
   background-color: #ffffff;
 }
 
-/* Animación exclusiva para la tarjeta superior de presentación */
 .card-animada-Hero {
   opacity: 0;
   animation: subirTexto 2.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -292,8 +273,7 @@ body {
   justify-content: center !important;
   align-items: center !important;
   width: 100% !important;
-  margin-top: 35px !important;
-  margin-bottom: 20px !important;
+  margin: 35px 0 20px 0 !important;
   position: relative !important;
   z-index: 5 !important;
   opacity: 0;
@@ -327,8 +307,6 @@ body {
   background: linear-gradient(to bottom, #292929, #000000);
   z-index: -1;
   border-radius: 9999px;
-  transition: all 0.2s ease;
-  opacity: 1;
 }
 
 .styled-button:active {
@@ -346,99 +324,21 @@ body {
   height: 45px;
   margin-left: 15px;
   border-radius: 50%;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 1);
   border: 1px solid #252525;
-  transition: all 0.2s ease;
-}
-
-.styled-button .inner-button::before {
-  content: "";
-  position: absolute;
-  top: -2px;
-  right: -1px;
-  bottom: -1px;
-  left: -1px;
-  background: linear-gradient(to bottom, #292929, #000000);
-  z-index: -1;
-  border-radius: 9999px;
-  transition: all 0.2s ease;
-  opacity: 1;
 }
 
 .styled-button .inner-button .icon {
-  filter: drop-shadow(0 10px 20px rgba(26, 25, 25, 0.9)) drop-shadow(0 0 4px rgba(0, 0, 0, 1));
+  filter: drop-shadow(0 10px 20px rgba(26, 25, 25, 0.9));
   transition: all 0.4s ease-in-out;
 }
 
 .styled-button .inner-button .icon:hover {
-  filter: drop-shadow(0 10px 20px rgba(50, 50, 50, 1)) drop-shadow(0 0 20px rgba(2, 2, 2, 1));
   transform: rotate(-35deg);
 }
 
-@media (max-width: 768px) {
-  .btn-container {
-    margin-top: 10px !important;
-    margin-bottom: 30px !important;
-  }
-  .styled-button {
-    padding: 0.75rem 1.4rem !important;
-    font-size: 0.95rem !important;
-    max-width: 90%;
-  }
-  .styled-button .inner-button {
-    width: 32px !important;
-    height: 32px !important;
-    margin-left: 10px !important;
-  }
-  .styled-button .inner-button .icon {
-    width: 16px !important;
-    height: 16px !important;
-  }
-}
-
-@media (min-width: 992px) {
-  .card-owner-container {
-    max-width: 750px;
-    margin: 40px auto;
-  }
-  .custom-card {
-    max-width: 100% !important;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-radius: 24px;
-  }
-  .card-img-wrapper {
-    width: 50% !important;
-    height: 320px !important;
-  }
-  .custom-card .card-img-top {
-    height: 320px !important;
-    object-fit: cover;
-  }
-  .custom-card .card-body {
-    width: 50% !important;
-    padding: 2.5rem !important;
-  }
-  .custom-card .card-title {
-    font-size: 2rem !important;
-  }
-  .custom-card .card-subtitle {
-    font-size: 1.25rem !important;
-  }
-  .badge-icon {
-    bottom: 20px;
-    right: -15px;
-    width: 45px;
-    height: 45px;
-    border-radius: 12px;
-  }
-}
-
 /* ========================================================== */
-/* SECCIÓN 2: CARDS DE BENEFICIOS Y ANIMACIÓN POR SCROLL       */
+/* SECCIÓN 2: CARDS DE BENEFICIOS                             */
 /* ========================================================== */
-
 .nueva-seccion {
   background-color: #f4f1ea;
   padding: 60px 20px;
@@ -466,7 +366,6 @@ body {
   transform: translateY(-5px);
 }
 
-/* Estado base oculto para la Sección 2 (sólo actúa al hacer scroll) */
 .feature-card.card-animada-scroll {
   opacity: 0;
   transform: translateY(60px);
@@ -500,23 +399,9 @@ body {
   line-height: 1.4;
 }
 
-@media (min-width: 992px) {
-  .features-container {
-    flex-direction: row;
-    max-width: 1100px;
-    justify-content: center;
-  }
-  .feature-card {
-    flex: 1;
-    max-width: 350px;
-    padding: 40px 30px;
-  }
-}
-
 /* ========================================================== */
-/* SECCIÓN: ¿QUIÉNES SOMOS? (Diseño de 2 Columnas)           */
+/* SECCIÓN: ¿QUIÉNES SOMOS?                                  */
 /* ========================================================== */
-
 .quienes-somos {
   background-color: #f4f1ea;
   padding: 60px 0;
@@ -524,7 +409,6 @@ body {
   position: relative;
 }
 
-/* Línea roja al PRINCIPIO */
 .quienes-somos::before {
   content: "";
   display: block;
@@ -535,32 +419,26 @@ body {
   border-radius: 4px;
 }
 
-/* Contenedor principal en filas para móvil y en dos columnas para PC */
 .quienes-somos-container {
   max-width: 1300px;
   margin: 0 auto;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding: 0 5%;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-/* Columna Izquierda */
 .quienes-somos-info {
   display: flex;
   flex-direction: column;
   gap: 25px;
   width: 100%;
-  
-  /* Animación */
   opacity: 0;
   transform: translateY(60px);
   transition: transform 1s ease, opacity 1s ease;
 }
 
-/* Cuadro blanco del título */
 .quienes-somos-titulo-box {
   background-color: #ffffff;
   padding: 20px 35px;
@@ -577,13 +455,12 @@ body {
   margin: 0;
 }
 
-/* Subrayado de la palabra somos */
-.quienes-somos-titulo-box h2 span.linea-roja-palabra {
+.linea-roja-palabra {
   position: relative;
   display: inline-block;
 }
 
-.quienes-somos-titulo-box h2 span.linea-roja-palabra::after {
+.linea-roja-palabra::after {
   content: "";
   position: absolute;
   left: 0;
@@ -594,7 +471,6 @@ body {
   border-radius: 4px;
 }
 
-/* Cuadro blanco del texto */
 .quienes-somos-contenido {
   background-color: #ffffff;
   padding: 30px 35px;
@@ -612,7 +488,6 @@ body {
   margin: 0;
 }
 
-/* Columna Derecha (Imagen) */
 .quienes-somos-imagen-box {
   background-color: #ffffff;
   padding: 15px;
@@ -620,8 +495,6 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
   width: 100%;
   box-sizing: border-box;
-  
-  /* Animación */
   opacity: 0;
   transform: translateY(60px);
   transition: transform 1s ease 0.2s, opacity 1s ease 0.2s;
@@ -635,14 +508,12 @@ body {
   display: block;
 }
 
-/* Activador de animación */
 .quienes-somos-info.en-vista,
 .quienes-somos-imagen-box.en-vista {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
 
-/* Línea roja al FINAL */
 .quienes-somos::after {
   content: "";
   display: block;
@@ -653,19 +524,393 @@ body {
   border-radius: 4px;
 }
 
-/* --- DISEÑO EN COMPUTADORAS (Pantallas grandes) --- */
+/* ========================================================== */
+/* SECCIÓN: TIPOS DE TOLDOS                                   */
+/* ========================================================== */
+.toldos-section {
+  background-color: #f4f1ea;
+  padding: 10px 0 60px 0;
+  width: 100%;
+  position: relative;
+  margin-top: -20px;
+}
+
+.toldos-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 5%;
+  box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: transform 1s ease, opacity 1s ease;
+}
+
+.toldos-container.en-vista {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.toldos-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.toldos-titulo-box {
+  background-color: #ffffff;
+  padding: 20px 35px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  display: inline-block;
+}
+
+.toldos-titulo-box h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111111;
+  margin: 0;
+}
+
+.toldos-tabs-nav {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.toldo-tab-btn {
+  padding: 16px 30px;
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #555555;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.toldo-tab-btn:hover {
+  border-color: #e63946;
+  color: #e63946;
+}
+
+.toldo-tab-btn.active {
+  background-color: #e63946;
+  border-color: #e63946;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+}
+
+.toldo-display-container {
+  display: flex;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  transition: opacity 0.3s ease;
+}
+
+.toldo-mini-card {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.toldo-mini-card h3 {
+  font-size: 2rem;
+  color: #111111;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.toldo-mini-card p {
+  font-family: system-ui, -apple-system, sans-serif !important;
+  font-size: 1.05rem;
+  color: #555555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.toldo-image-box {
+  flex: 1;
+  min-height: 480px;
+}
+
+.toldo-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ========================================================== */
+/* SECCIÓN DE VIDEO LOCAL (CORREGIDO PARA EVITAR DISTORSIÓN) */
+/* ========================================================== */
+.video-section {
+  background-color: #f4f1ea !important;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
+
+.video-main-container {
+  width: 100%;
+  max-width: 500px; /* Ancho optimizado para que los reels verticales no queden gigantes en PC */
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.video-header h2 {
+  font-size: 2.2rem;
+  color: #111111;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.linea-roja-decorativa {
+  width: 60px;
+  height: 3px;
+  background-color: #e63946;
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+.video-responsive {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-responsive video {
+  width: 100%;
+  height: auto;
+  max-height: 75vh; /* Mantiene la proporción correcta del reel sin estirarse ni deformarse */
+  display: block;
+  object-fit: contain; /* Evita recortes y deformaciones forzadas */
+}
+
+/* ========================================================== */
+/* MEDIA QUERIES GENERALES                                    */
+/* ========================================================== */
+@media (max-width: 768px) {
+  .hero-container {
+    padding: 30px 20px 0 20px;
+  }
+  .texto-animado h1 {
+    font-size: 2.2rem;
+  }
+  .texto-animado p {
+    font-size: 1rem;
+  }
+  .btn-container {
+    margin-top: 10px !important;
+    margin-bottom: 30px !important;
+  }
+  .styled-button {
+    padding: 0.75rem 1.4rem !important;
+    font-size: 0.95rem !important;
+  }
+  .toldos-section {
+    padding: 5px 0 40px 0;
+    margin-top: -10px;
+  }
+  .toldo-display-container {
+    flex-direction: column;
+  }
+  .toldo-image-box {
+    width: 100%;
+    height: 280px;
+    min-height: auto;
+  }
+  .toldos-tabs-nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .toldos-tabs-nav .toldo-tab-btn:nth-child(3) {
+    grid-column: span 2;
+    max-width: 70%;
+    margin: 0 auto;
+  }
+}
+
 @media (min-width: 992px) {
+  .card-owner-container {
+    max-width: 750px;
+    margin: 40px auto;
+  }
+  .custom-card {
+    max-width: 100% !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 24px;
+  }
+  .card-img-wrapper {
+    width: 50% !important;
+    height: 320px !important;
+  }
+  .custom-card .card-img-top {
+    height: 320px !important;
+  }
+  .custom-card .card-body {
+    width: 50% !important;
+    padding: 2.5rem !important;
+  }
+  .features-container {
+    flex-direction: row;
+    max-width: 1100px;
+    justify-content: center;
+  }
+  .feature-card {
+    flex: 1;
+    max-width: 350px;
+    padding: 40px 30px;
+  }
   .quienes-somos-container {
-    flex-direction: row; /* Pone la info a la izquierda y la imagen a la derecha */
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
   }
-
   .quienes-somos-info {
     width: 55%;
   }
-
   .quienes-somos-imagen-box {
     width: 40%;
   }
+}
+
+/* ========================================================== */
+/* SECCIÓN COMBINADA: BENEFICIOS + VIDEO VERTICAL             */
+/* ========================================================== */
+.seccion-resultados-beneficios {
+    background-color: #f4f1ea !important;
+    padding: 60px 0;
+    width: 100%;
+    position: relative;
+}
+
+/* Línea roja superior exacta a tus otras secciones */
+.seccion-resultados-beneficios::before {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 5px;
+    background-color: #e63946;
+    margin: 0 auto 50px auto;
+    border-radius: 4px;
+}
+
+.resultados-beneficios-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 5%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.columna-beneficios-estilo {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Aumentamos de 25px a 40px para separarlas del título */
+    width: 100%;
+}
+
+.titulo-caja-estilo {
+    background-color: #ffffff;
+    padding: 20px 35px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    display: inline-block;
+    align-self: flex-start;
+    margin-bottom: 10px; /* Margen extra de seguridad abajo del título */
+}
+
+.titulo-caja-estilo h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #111111;
+    margin: 0;
+}
+
+.tarjetas-apiladas {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* Espacio cómodo entre tarjeta y tarjeta */
+    max-width: 550px;
+}
+
+/* Efecto escalonado para la tarjeta central */
+.offset-derecha {
+    margin-left: 30px;
+}
+
+.columna-video-estilo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Línea roja inferior exacta a tus otras secciones */
+.seccion-resultados-beneficios::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 5px;
+    background-color: #e63946;
+    margin: 60px auto 0 auto;
+    border-radius: 4px;
+}
+
+/* Ajustes Responsive */
+@media (min-width: 992px) {
+    .resultados-beneficios-container {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
+    
+    .columna-beneficios-estilo {
+        width: 52%;
+    }
+    
+    .columna-video-estilo {
+        width: 44%;
+        justify-content: flex-end;
+    }
+    
+    .video-main-container {
+        max-width: 450px;
+        margin: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .offset-derecha {
+        margin-left: 0;
+    }
+    .titulo-caja-estilo h2 {
+        font-size: 2rem;
+    }
 }
